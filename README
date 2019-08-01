@@ -1,0 +1,71 @@
+Program description: 
+Implement insertion sort, merge sort, and radix sort
+
+What I learned: 
+How to implement insertion sort, merge sort, and radix sort.
+
+
+___________________________________________________________________
+Sorting Assignment 
+    By: Kingsley Bowen
+    Purpose: The purpose of this program is to implement different sorting 
+    algorithms and either print or save the output of the sorting algorithms
+    to a file. 
+    Acknowledgements: Thank you to Brett Gurman for helping explaining the 
+    different sorting algorithms to me. 
+
+
+Files provided: 
+sorter.cpp - Implementation of the the interface. Also runs the main work
+    loop, and creates a new file that saves data output when needed. Has two
+    functional modes: interactive and taking in a file.   
+sortAlgs.cpp - The implementation of different sorting algorithms including
+    radix sort, insertion sort, and merge sort.
+sortAlgs.h - The list of public functions that sortAlgs.cpp uses.
+
+How to compile:
+    clang++ -Wall -Wextra -std=c++11 sorter.cpp sortAlgs.cpp
+
+Outline of the data structures and algorithms used:
+    The main data storage structure used in this homework was the vector. 
+    Vectors are useful because they dynamically allocate memory and have 
+    built in functions that give information about the data stored in the 
+    vector. They also do not dynamically allocate memory that they do not 
+    need. The draw backs to vectors is that vectors take up more space than 
+    what is needed for an array of the same size. The algorithms used depend
+    on which sort is used. In this case, insertion sort was implemented in 
+    place. This means that it was sorted within a single vector. In insertion 
+    sort, the minimum number of the vector was located and compared with the 
+    next number in the vector. If the next number in the vector was smaller 
+    than the current minimum, the two numbers would swap places in the vector,
+    and the new current minimum would be compared to the rest of the vector. 
+    The best place asymptotic run time behavior would be O(n) if everything 
+    was already in the correct position. The worst asymptotic run time behavior
+    would be O(n^2) if the vector was sorted in the opposite order as desired. 
+    Merge sort was implemented recursively. The vector was broken up into two 
+    smaller lists. The lists then get smaller until each list either contains 
+    an empty list or only one element. The element or empty list then gets 
+    returned and sorted until a completely sorted list results. The best, 
+    worst, and average run time of merge sort is almost always n log n. The 
+    final sort Radix Sort is the only non comparative sort implemented in this 
+    submission of this project. Radix sort begins by locating the least 
+    significant digit. It then sorts by least significant digit by putting the
+    least significant digit numbers in a corresponding numbers bucket. The 
+    buckets are then appended and the next least significant digit is then 
+    put back into buckets. The buckets are then appended, and the cycle 
+    continues until the cycle has ran the same number of times as the 
+    max-digit number in the data’s digit count. The Radix run time behavior 
+    is O(n*d) with d being the number of digits of the largest number. This 
+    means that the more digits of the data, the longer the sort will take. 
+
+Testing:
+    For testing the sorting algorithms, I created test vectors, sorted
+    each using the various sorting algorithms, and printed the resulting vector
+    to confirm correctness.In creating test vectors, I was sure to consider a
+    number of edge cases, including lists with duplicate numbers, empty lists,
+    lists with 0 and 1, and large data inputs. 
+
+    For testing the various modes as well as the input/output interface, I
+    simply ran the executables with all combinations of parameters in both
+    interactive mode and file mode. 
+	
